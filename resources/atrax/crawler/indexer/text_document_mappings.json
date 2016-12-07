@@ -1,0 +1,136 @@
+{
+  "text_document": {
+    "_source": {
+      "enabled": false
+    },
+    "_all": {
+      "enabled": false
+    },
+    "dynamic": "strict",
+    "_analyzer": {
+      "path": "analyzer"
+    },
+    "properties": {
+      "url": {
+        "type": "string",
+        "store": true,
+        "analyzer": "url"
+      },
+      "raw_url": {
+        "type": "string",
+        "store": true,
+        "analyzer": "url"
+      },
+      "filename": {
+        "type": "string",
+        "store": true,
+        "analyzer": "filename"
+      },
+      "title": {
+        "type": "string",
+        "store": true,
+        "term_vector": "with_positions_offsets",
+        "fields": {
+          "default": {
+            "type": "string",
+            "analyzer": "simple"
+          },
+          "bigram": {
+            "type": "string",
+            "analyzer": "word_bigram"
+          }
+        }
+      },
+      "body": {
+        "type": "string",
+        "store": true,
+        "term_vector": "with_positions_offsets",
+        "fields": {
+          "default": {
+            "type": "string",
+            "analyzer": "simple"
+          },
+          "bigram": {
+            "type": "string",
+            "analyzer": "word_bigram"
+          }
+        }
+      },
+      "media_type": {
+        "type": "string",
+        "store": true,
+        "index": "not_analyzed"
+      },
+      "charset": {
+        "type": "string",
+        "store": true,
+        "index": "not_analyzed"
+      },
+      "date_discovered": {
+        "type": "date",
+        "format": "dateOptionalTime",
+        "store": true
+      },
+      "date_fetched": {
+        "type": "date",
+        "format": "dateOptionalTime",
+        "store": true
+      },
+      "date_created": {
+        "type": "date",
+        "format": "dateOptionalTime",
+        "store": true
+      },
+      "date_modified": {
+        "type": "date",
+        "format": "dateOptionalTime",
+        "store": true
+      },
+      "language": {
+        "type": "string",
+        "store": true,
+        "index": "not_analyzed"
+      },
+      "analyzer": {
+        "type": "string",
+        "store": "true",
+        "index": "no"
+      },
+      "authors": {
+        "type": "string",
+        "store": true
+      },
+      "misc": {
+        "type": "string",
+        "analyzer": "standard"
+      },
+      "email_addresses": {
+        "type": "string",
+        "store": true,
+        "analyzer": "email"
+      },
+      "out_links": {
+        "type": "string",
+        "store": true,
+        "analyzer": "url"
+      },
+      "googlebot_blocked": {
+        "type": "boolean",
+        "store": true
+      },
+      "text_length": {
+        "type": "integer",
+        "store": true
+      },
+      "size": {
+        "type": "integer",
+        "store": true
+      },
+      "similarity_hash_digest": {
+        "type": "long",
+        "store": true,
+        "index": "no"
+      }
+    }
+  }
+}

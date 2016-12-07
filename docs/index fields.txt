@@ -1,0 +1,18 @@
+_id (itemName())
+s3-key (itemName().rstrip('/?')
+url (url)
+content-type (tika, contentType, content-type)
+charset (tika, charset)
+date-crawled (last-crawled)
+googlebot-blocked (googleBotExclusionReasons)
+date-modified (tika, date, last-modified, last-modified which ever is earliest)
+language (language detector or content-langauge)
+text-length (calcuated)
+size (in bytes)
+keywords (tika)
+author (tika)
+unigram_title (tika or content-disposition filename)
+bigram_title (tika or content-disposition filename)
+unigram_content
+bigram_content
+simhash (calculated from plain text)

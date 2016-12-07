@@ -1,0 +1,5 @@
+-------------------------------------------------------------------------------
+Index contents of compressed files (zip, tar, rar, …)
+-------------------------------------------------------------------------------
+Index both encoded and decoded versions of URLs. (Create an ElasticSearch filter to do this on indexing (not on querying))
+-------------------------------------------------------------------------------

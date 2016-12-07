@@ -1,0 +1,72 @@
+{
+  "settings": {
+    "analysis": {
+      "analyzer": {
+        "url": {
+          "type": "pattern",
+          "pattern": "[:/?&=.#]+",
+          "flags": "CASE_INSENSITIVE|UNICODE_CASE",
+          "stopwords": [
+            "http",
+            "https",
+            "www"
+          ]
+        },
+        "email": {
+          "type": "pattern",
+          "pattern": "\\W+",
+          "flags": "CASE_INSENSITIVE|UNICODE_CASE"
+        },
+        "filename": {
+          "type": "custom",
+          "tokenizer": "standard",
+          "filter": [
+            "lowercase",
+            "char_trigram"
+          ]
+        },
+        "word_bigram": {
+          "type": "custom",
+          "tokenizer": "standard",
+          "filter": [
+            "lowercase",
+            "truncate_5",
+            "word_bigram"
+          ]
+        },
+        "character_bigram": {
+          "type": "custom",
+          "tokenizer": "pattern",
+          "filter": [
+            "lowercase",
+            "char_bigram"
+          ]
+        }
+      },
+      "tokenizer": {
+      },
+      "filter": {
+        "truncate_5": {
+          "type": "truncate",
+          "length": 5
+        },
+        "word_bigram": {
+          "type": "shingle",
+          "min_shingle_size": 2,
+          "max_shingle_size": 2,
+          "output_unigrams": false
+        },
+        "char_bigram": {
+          "type": "nGram",
+          "min_gram": 2,
+          "max_gram": 2
+        },
+        "char_trigram": {
+          "type": "nGram",
+          "min_gram": 3,
+          "max_gram": 3
+        }
+      }
+    }
+  }
+}
